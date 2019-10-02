@@ -1,10 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'reusable_card.dart';
-import 'icon_content.dart';
-import 'constants.dart';
-import 'round_icon_button.dart';
+import 'package:flutter_bmi_calculator/components/bottom_button.dart';
+import '../components/reusable_card.dart';
+import '../components/icon_content.dart';
+import '../constants.dart';
+import '../components/round_icon_button.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:flutter_bmi_calculator/calculator_brain.dart';
 
 enum Gender { male, female }
 
@@ -17,7 +19,7 @@ class _InputPageState extends State<InputPage> {
   Gender selectedGender;
   int height = 180;
   int weight = 60;
-  int age = 30;
+  int age = 20;
 
   @override
   Widget build(BuildContext context) {
@@ -212,12 +214,13 @@ class _InputPageState extends State<InputPage> {
               ),
             ],
           )),
-          Container(
-            color: kBottomContainerColor,
-            margin: EdgeInsets.only(top: 10.0),
-            width: double.infinity,
-            height: kBottomContainerHeight,
-          ),
+          BottomButton(
+              buttonTitle: 'CALCULATE',
+              onTab: () {
+//                CalculatorBrain calc = CalculatorBrain(height: height, weight: weight);
+
+                Navigator.pushNamed(context, '/second');
+              }),
         ],
       ),
     );
