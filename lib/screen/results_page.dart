@@ -5,6 +5,16 @@ import '../components/reusable_card.dart';
 import 'package:flutter_bmi_calculator/components/bottom_button.dart';
 
 class ResultsPage extends StatelessWidget {
+  ResultsPage(
+      {@required this.bmiResult,
+      @required this.interpretation,
+      @required this.resultText});
+
+  final String bmiResult;
+  final String resultText;
+
+  final String interpretation;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
